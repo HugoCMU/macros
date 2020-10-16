@@ -27,7 +27,7 @@ def hover_over(spell: str,
         macro += '/stopcast\n'
     if dismount:
         macro += '/dismount\n'
-    macro += f'/use [@mouseover,nodead,help] {spell}'
+    macro += f'/use [@mouseover, harm, nodead][@target, harm, nodead] {spell}'
     return macro
 
 
@@ -70,9 +70,17 @@ def smart_travel(travel_spell: str,
 
 if __name__ == "__main__":
 
-    # Shaman
-    hover_over('Windshear', stopcast=True)
-    hover_over('Earth Shield')
-    heal_harm('Riptide', 'Flame Shock')
-    smart_travel('Ghost Wolf', swim_spell='Water Walking')
+    # # Shaman
+    # hover_over('Windshear', stopcast=True)
+    # hover_over('Earth Shield')
+    # heal_harm('Riptide', 'Flame Shock')
+    # heal_harm('Chain Heal', 'Chain Lightning')
+    # heal_harm('Healing Burst', 'Lava Burst')
+    # heal_harm('Healing Wave', 'Lightning Bolt')
+    # smart_travel('Ghost Wolf', swim_spell='Water Walking')
+    
+    # Rogue
+    hover_over('Shuriken Toss', stopcast=True)
+    hover_over('Shadowstep', stopcast=True)
+    hover_over('Shadowstrike', stopcast=True)
     
